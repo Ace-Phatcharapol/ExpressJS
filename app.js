@@ -1,5 +1,6 @@
 var createError = require('http-errors');
 var express = require('express');
+const PORT = 3000;
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -43,4 +44,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+// เริ่มเซิร์ฟเวอร์ให้ฟังพอร์ตที่กำหนด
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
 module.exports = app;
